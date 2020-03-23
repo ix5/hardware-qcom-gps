@@ -127,7 +127,7 @@ extern const char EXIT_ERROR_TAG[];
 inline void loc_logger_init(unsigned long debug, unsigned long timestamp)
 {
    loc_logger.DEBUG_LEVEL = debug;
-#ifdef TARGET_BUILD_VARIANT_USER
+#ifndef TARGET_DEBUGGABLE
    // force user builds to 2 or less
    if (loc_logger.DEBUG_LEVEL > 2) {
        loc_logger.DEBUG_LEVEL = 2;

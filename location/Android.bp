@@ -1,0 +1,36 @@
+cc_library_headers {
+    name: "liblocation_api_headers",
+    vendor: true,
+    export_include_dirs: [
+        ".",
+    ],
+}
+
+cc_library_shared {
+    name: "liblocation_api",
+    vendor: true,
+
+    defaults: ["qcom_gps_gnss_defaults"],
+
+    shared_libs: [
+        "libutils",
+        "libcutils",
+        "libgps.utils",
+        "libdl",
+        "liblog",
+    ],
+
+    srcs: [
+        "LocationAPI.cpp",
+        "LocationAPIClientBase.cpp",
+    ],
+
+    cflags: [
+        "-fno-short-enums",
+    ],
+
+    header_libs: [
+        "libloc_pla_headers",
+        "libgps.utils_headers",
+    ],
+}

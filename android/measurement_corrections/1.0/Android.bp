@@ -1,0 +1,14 @@
+filegroup {
+    name: "measurement_corrections_1_0_src",
+    srcs: [
+        "MeasurementCorrections.cpp",
+    ],
+}
+
+cc_library_headers {
+    name: "measurement_corrections_1_0_headers",
+    vendor: true,
+    export_include_dirs: [
+        ".",
+    ],
+}
